@@ -1,0 +1,19 @@
+$color-pimary:#F7C9F3 ;
+$color-secundary: #4180F6 ;
+$color-background:#FFF4FD;
+$color_fuente:#ffff;
+$tamaño_fuente:12px;
+$fuente_titulos:"Chakra Petch ", "Blond";
+body{
+    background-color: $color-background;
+    header{
+        div{
+            color:$color_fuente;
+            font-family: $fuente_titulos;
+            background: $color-secundary;
+            p{
+                
+            }
+        }
+    }
+}
