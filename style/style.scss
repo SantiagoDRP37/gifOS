@@ -3,17 +3,31 @@ $color-secundary: #4180F6 ;
 $color-background:#FFF4FD;
 $color_fuente:#ffff;
 $tamaño_fuente:12px;
-$fuente_titulos:"Chakra Petch ", "Blond";
+$fuente_titulos:"Chakra Petch";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    outline: none;
+
+}
 body{
     background-color: $color-background;
+    .titulos{
+        height:1.4%;
+        width: 99.9%;
+        margin: auto;
+        background-image: linear-gradient(270deg, #F7C9F3 , #4180F6 );
+        box-shadow: 5px 10px black;//hay que hacer un borde, 
+    }
     header{
         div{
             color:$color_fuente;
             font-family: $fuente_titulos;
+            font-size: $tamaño_fuente;
             background: $color-secundary;
-            p{
-                
-            }
+            
         }
     }
 }

@@ -1,8 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  outline: none; }
+
 body {
   background-color: #FFF4FD; }
+  body .titulos {
+    height: 1.4%;
+    width: 99.9%;
+    margin: auto;
+    background-image: linear-gradient(270deg, #F7C9F3, #4180F6);
+    box-shadow: 5px 10px black; }
   body header div {
     color: #ffff;
-    font-family: "Chakra Petch ", "Blond";
+    font-family: "Chakra Petch";
+    font-size: 12px;
     background: #4180F6; }
 
 /*# sourceMappingURL=style.css.map */
