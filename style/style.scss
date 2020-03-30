@@ -2,6 +2,7 @@ $color-pimary:#F7C9F3 ;
 $color-secundary: #4180F6 ;
 $color-background:#FFF4FD;
 $color_fuente:#ffff;
+$color_backgroundPanel:#E6E6E6;
 $tamaño_fuente:12px;
 $fuente_titulos:"Chakra Petch";
 *{
@@ -10,26 +11,123 @@ $fuente_titulos:"Chakra Petch";
     box-sizing: border-box;
     scroll-behavior: smooth;
     outline: none;
-
+    font-family: $fuente_titulos;
+}
+%titulos{
+    height:1.4%; 
+    width: 99.9%;
+    background-image: linear-gradient(270deg, #F7C9F3 , #4180F6 );
+    color:$color_fuente;
 }
 body{
     background-color: $color-background;
+    
     .titulos{
-        height:1.4%;
-        width: 99.9%;
+        @extend %titulos;
         margin: auto;
-        margin-bottom: 10px;
-        background-image: linear-gradient(270deg, #F7C9F3 , #4180F6 );
-        box-shadow: 5px 10px black;//hay que hacer un borde, 
-        
+        margin-bottom: 1px;
+        box-shadow:0 1px 0 0 #110038;
+    }
+    .contenedor_p{
+        width: 82.9%;
+        margin: auto;
     }
     header{
         div{
-            color:$color_fuente;
-            font-family: $fuente_titulos;
-            font-size: $tamaño_fuente;
-            background: $color-secundary;
-            
+            font-size: $tamaño_fuente; 
+        }
+        #menu{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 2.4%;
+            margin-bottom: 2.4%;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                list-style: none;
+                li{
+                    margin-right: 16px;
+                }
+                .boton{ 
+                    display: block;
+                    width: 100%;
+                    padding: 9px 26px; 
+                    text-decoration: none;
+                    border: 1px solid  #110038;
+                    box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+                    background-color:$color-pimary;
+                    font-size: 16px;
+                    line-height: 18px;
+                }
+                #misGift{
+                    display: block;
+                    padding: 9px 0px 9px 1px; 
+                    text-decoration: none;
+                    font-size: 16px;
+                    line-height: 18px;
+                    
+                }
+            }
+        }
+    }
+    main{
+        .panelBuscar{
+            background: #E6E6E6;
+            box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+            width: 82.8%;
+            margin: auto;
+            padding: 3px;
+            margin-bottom: 3%;
+            .titulo_seg{
+                @extend %titulos;
+                width: 100%;
+                font-weight: bold;
+                padding-left: 0.2%;
+            }
+            #barraBuscar{
+                width: 90%;
+                margin: 16px;
+                padding: 6px;
+                background: #FFFFFF;
+                border: 1px solid #979797;
+                box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+            }
+            #botonBuscar{
+                padding: 3px 8px;
+                font-size: 16px;
+                line-height: 18px
+            }
+        }
+        .subTitulo{
+            width: 100%;
+            background: #FFFAFE;
+            border: 1px solid #E6BBE2;
+            box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+            padding: 0.35%;
+            margin-bottom: 2%;
+        }
+        .panelSugerencias{
+            .contenedorSugerencias{
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 2%;
+                .sugerencia{
+                    width: 24.5%;
+                    background: #E6E6E6;
+                    padding: 3px;
+                    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+                    .menu{
+                        @extend %titulos;
+                        height: auto;
+                    }
+                }
+            }
+        }
+        .panelTendencias{
+            #resultados{
+                display: grid;
+            }
         }
     }
 }

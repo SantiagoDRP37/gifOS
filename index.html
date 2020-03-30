@@ -9,41 +9,78 @@
     <title>Document</title>
 </head>
 <body>
+    <script src="./script/script.js">
+    </script>
     <header>
         <div class="titulos">
             <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:</p>
         </div>
-        <section>
-            <div class="contenedor">
+        <div class="contenedor_p">
+            <div id="menu">
                 <img src="./image/assets/gifOF_logo.png" alt="Logo de gif.os">
                 <ul>
-                    <li><a href="">Crear Guifos</a></li>
-                    <Li><a href="">Elegir tema</a></Li>
-                    <li><a href="">Mis Guifos</a></li>
+                    <li><a class="boton" href="./pages/crearGift.html">Crear Guifos</a></li>
+                    <Li>
+                        <div>
+                            <a class="boton" href="">Elegir tema <img src="./image/assets/dropdown.svg" alt=""></a> 
+                        </div></Li>
+                    <li><a id="misGift" href="">Mis Guifos</a></li>
                 </ul>
             </div>
-        </section>
+        </div>
     </header>
     <main>
-        <section>
-            <div class="contenedor">
-                <div>
-                    buscar
+        <div class="buscar">
+            <div class="panelBuscar">
+                <div class="titulo_seg">
+                    <p>buscar</p> 
                 </div>
                 <div>
-                    <form action="">
-                        <input type="text" name="bar_buscar" value="Busca gifs, hashtags, temas, busca lo que quieras…">
-                        <input type="submit" value="Buscar">
+                    <form action="z">
+                        <input id="barraBuscar" type="text" name="bar_buscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"><button id="botonBuscar" type="submit" disabled> <img id="lupa" src="./image/assets/lupa.svg" alt="imagen de lupa"> Buscar</button>
                     </form>
                 </div>
-            </div>            
-        </section>
-        <section>
-            <div class="contenedor">
-                <p>Hoy te sugerimos:</p>
-                
             </div>
-        </section>
+        </div>
+        <div class="panelSugerencias">
+            <div class="contenedor_p">
+                <div class="subTitulo">
+                    <p>Hoy te sugerimos:</p>
+                </div>  
+                <div class="contenedorSugerencias">
+                    <div class="sugerencia">
+                        <div class="menu">titulo y x</div>
+                        <div class="gif"></div>
+                        <a href="">ver mas</a>
+                    </div>
+                    <div class="sugerencia">
+                        <div class="menu">titulo y x</div>
+                        <div class="gif"></div>
+                        <a href="">ver mas</a>
+                    </div>
+                    <div class="sugerencia">
+                        <div class="menu">titulo y x</div>
+                        <div class="gif"></div>
+                        <a href="">ver mas</a>
+                    </div>
+                    <div class="sugerencia">
+                        <div class="menu">titulo y x</div>
+                        <div class="gif"></div>
+                        <a href="">ver mas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panelTendencias">
+            <div class="contenedor_p">
+                <div class="subTitulo">
+                    <p>Tendencias:</p>
+                </div>
+                <div id="resultados">
+                    <p>holaasassa</p>
+                </div>
+            </div>
+        </div>
     </main>
 </body>
 </html>
