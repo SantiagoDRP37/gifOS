@@ -1,6 +1,48 @@
 const apiKey = 'M3pHPCucA0Juey10cWpWR1lRfkhJFfzi';
-const q = 'gatos';
-const path = `http://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${q}`;
+const busquedaEndPoint = 'http://api.giphy.com/v1/gifs/search?api_key='
+const tendenciasEndPoint ="http://api.giphy.com/v1/gifs/trending?api_key=";
+
+//************************************** eventos *************************************************************//
+//realizar busqueda con  botonBuscar
+let busqText = document.getElementById("barraBuscar");
+let busqForm = document.getElementById('buscarForm');
+let sugerencias = document.getElementsByClassName("panelSugerencias")[0]; 
+let titulo = document.getElementById("tituloBuq");
+busqForm.addEventListener('submit',(e)=>{
+    e.preventDefault();
+    const q = busqText.value
+    let resultHtml='';
+    titulo.textContent = q+" (resultados)";
+    sugerencias.innerHTML = resultHtml;
+    buscarGif(q);
+
+});
+//Realizar inicio de video
+function getStreamAndRecord () { 
+
+  navigator.mediaDevices.getUserMedia({
+  
+    audio: false,
+    video: {
+        facingMode: "user",
+        width: { min: 640, ideal: 1280, max: 1920 },
+        height: { min: 480, ideal: 720, max: 1080 }
+    }
+  
+  })
+  
+  .then(function(stream) {
+  
+  video.srcObject = stream;
+  
+  video.play()
+  
+  })
+}
+//Realiza cancelar video
+let cancelar = document.getElementsByClassName("panelCrearGift");
+//**************************************Funciones*************************************************************//
+
 //funcion mostrar resultados de busqueda
 function mostrarBusqueda(datos){
   const resultados = document.getElementById('resultados'); 
@@ -9,22 +51,35 @@ function mostrarBusqueda(datos){
   datos.forEach(element => {
     let conteGif = document.createElement("div");
             conteGif.setAttribute("class", "conteGif");
-
             conteGif.innerHTML +=
-
                 ' <img src =' + element.images.downsized.url + '>' +
                 ' <div class = "foot">' +
                 '  <p>' + element.title + '</p>' +
                 ' </div>';
                 resultados.appendChild(conteGif) ;
-  });
-  
- 
-  
+  }); 
 }
-//funcion buscar gift de la barra de busqueda
-function buscarGif(){
-  const busq = fetch(path)
+//Funcion para mostrar los gif en tendencias
+function mostrarTendencias(datos){
+  const resultados = document.getElementById('resultados'); 
+  let resultHtml='';
+  resultados.innerHTML = resultHtml; //vacia las etiquetas dentro resultados
+  datos.forEach(element => {
+    let conteGif = document.createElement("div");
+            conteGif.setAttribute("class", "conteGif");
+            conteGif.innerHTML +=
+                ' <img src =' + element.images.downsized.url + '>' +
+                ' <div class = "foot">' +
+                '  <p>' + element.title + '</p>' +
+                ' </div>';
+                resultados.appendChild(conteGif) ;
+  }); 
+}
+/*funcion buscar gift de la barra de busqueda
+    q = busqueda ingresada en baner
+*/
+function buscarGif(q){
+  const busq = fetch(busquedaEndPoint + apiKey + '&q='+ q)
         .then((res) => {
             //console.log(res.json());
             return res.json();
@@ -41,7 +96,27 @@ function buscarGif(){
         });
   return busq;
 }
+//funcion buscar las tendencias de gift
+function tendenciasGift(){
+  const tend = fetch(tendenciasEndPoint + apiKey)
+        .then((res) => {
+            
+            return res.json();
+        })
+        .then(data=>{
+          
+          let datos = data.data;
+          mostrarBusqueda(datos);
+          
+          return data;
+        })
+        .catch(error => {
+            return error;
+        });
+  return tend;
+}
+tendenciasGift();
 window.onload = () => {
   
-  buscarGif();
+  tendenciasGift();
 }

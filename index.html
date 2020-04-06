@@ -9,8 +9,6 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="./script/script.js">
-    </script>
     <header>
         <div class="titulos">
             <p>¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas:</p>
@@ -36,8 +34,9 @@
                     <p>buscar</p> 
                 </div>
                 <div>
-                    <form action="z">
-                        <input id="barraBuscar" type="text" name="bar_buscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"><button id="botonBuscar" type="submit" disabled> <img id="lupa" src="./image/assets/lupa.svg" alt="imagen de lupa"> Buscar</button>
+                    <form id="buscarForm">
+                        <input type="text" id="barraBuscar" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…">
+                        <button id="botonBuscar" type="submit" > <img id="lupa" src="./image/assets/lupa.svg" alt="imagen de lupa"> Buscar</button>
                     </form>
                 </div>
             </div>
@@ -49,22 +48,22 @@
                 </div>  
                 <div class="contenedorSugerencias">
                     <div class="sugerencia">
-                        <div class="menu">titulo y x</div>
+                        <div class="menu">titulo <img src="./image/assets/button3.svg" alt="X"></div>
                         <div class="gif"></div>
                         <a href="">ver mas</a>
                     </div>
                     <div class="sugerencia">
-                        <div class="menu">titulo y x</div>
+                        <div class="menu">titulo <img src="./image/assets/button3.svg" alt="X"></div>
                         <div class="gif"></div>
                         <a href="">ver mas</a>
                     </div>
                     <div class="sugerencia">
-                        <div class="menu">titulo y x</div>
+                        <div class="menu">titulo <img src="./image/assets/button3.svg" alt="X"></div>
                         <div class="gif"></div>
                         <a href="">ver mas</a>
                     </div>
                     <div class="sugerencia">
-                        <div class="menu">titulo y x</div>
+                        <div class="menu">titulo <img src="./image/assets/button3.svg" alt="X"></div>
                         <div class="gif"></div>
                         <a href="">ver mas</a>
                     </div>
@@ -74,13 +73,15 @@
         <div class="panelTendencias">
             <div class="contenedor_p">
                 <div class="subTitulo">
-                    <p>Tendencias:</p>
+                    <p id="tituloBuq">Tendencias:</p>
                 </div>
                 <div id="resultados">
                     <p>holaasassa</p>
                 </div>
             </div>
         </div>
+        <script src="./script/script.js">
+        </script>
     </main>
 </body>
 </html>
