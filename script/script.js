@@ -17,29 +17,6 @@ busqForm.addEventListener('submit',(e)=>{
     buscarGif(q);
 
 });
-//Realizar inicio de video
-function getStreamAndRecord () { 
-
-  navigator.mediaDevices.getUserMedia({
-  
-    audio: false,
-    video: {
-        facingMode: "user",
-        width: { min: 640, ideal: 1280, max: 1920 },
-        height: { min: 480, ideal: 720, max: 1080 }
-    }
-  
-  })
-  
-  .then(function(stream) {
-  
-  video.srcObject = stream;
-  
-  video.play()
-  
-  })
-}
-//Realiza cancelar video
 let cancelar = document.getElementsByClassName("panelCrearGift");
 //**************************************Funciones*************************************************************//
 
