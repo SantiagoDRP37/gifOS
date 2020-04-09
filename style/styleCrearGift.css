@@ -127,5 +127,16 @@ main .panelCrearGift {
       display: flex; }
     main .panelCrearGift .mainCrearGif .textMain {
       padding: 2%; }
+  main .panelCrearGift .mainVideo #botonGrabar::before {
+    content: "";
+    padding: 0 1.2rem;
+    margin-top: -3px;
+    margin-bottom: -3px;
+    margin-left: -3px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid black;
+    box-shadow: inset -1px -1px 0 0 #997d97,inset 1px 1px 0 0 #fff;
+    background-image: url("../image/assets/camera.svg"); }
 
 /*# sourceMappingURL=styleCrearGift.css.map */

@@ -12,9 +12,25 @@ botonComenzar.addEventListener("click",()=>{
 let panelCrearGift = document.getElementsByClassName("panelCrearGift")[0];
 let botonCancelar = document.getElementById("botonCancelar");
 botonCancelar.addEventListener("click",()=>{
-panelCrearGift.style.cssText = 'display:none;';
+    panelCrearGift.style.cssText = 'display:none;';
 
-})
+    async() => {
+        try {
+          await visualizacionVid();
+            prompt('hola');
+        } catch (e) {
+          const popupContent = {
+            header: "Ups!",
+            title: "Parece que algo malió sal!",
+            body: "No tenés una cámara habilitada en éste dispositivo",
+            hasOptions: false,
+            icon: "error"
+          };
+          
+        }
+      }
+
+});
 //
 //**************************************Funciones*************************************************************//
 //Realizar inicio de video
