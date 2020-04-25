@@ -14,7 +14,7 @@
         </div>
         <div id="asf">
             <div class="contenedor_p">
-                <img src="../image/assets/arrow.svg" alt="back">
+                <img id="backHome" src="../image/assets/arrow.svg" alt="back">
                 <img src="../image/assets/gifOF_logo.png" alt="Logo">   
             </div>
         </div>
@@ -37,22 +37,58 @@
                         <samp class="negrilla">4)</samp> Listo para subir y compartir!<br>
                         ¿Quieres comenzar a crear tu <samp class="negrillaItalic">guifo</samp> ahora?
                         </p>
-                        <button id="botonCancelar">Cancelar</button><button id="botonComenzar">Comenzar</button>
+                        <div id="botones">
+                            <button id="botonCancelar" class="boton">Cancelar</button>
+                            <button id="botonComenzar" class="boton">Comenzar</button>
+                        </div>
                     </div>
                 </div>
                 <div class="mainVideo" style="display: none;">
                     <div class="marcoVideo">
-                        <video id="videoGift"></video>
-                        <div>
-                            <button id="botonGrabar"><span>Grabar</span></button>
+                        <video id="video"></video>
+                        <img id="videoGuardado"  style="display: none;"></img>
+                        <div class="panelCarga" style="display: none;">
+                            <div class="carga">
+                                <img src="../image/assets/globe_img.png" alt="iconoCargando">
+                                <samp class="negrilla"><p>Estamos subiendo tu guifo…</p></samp>
+                            </div>
+                            <div class="carga">
+                                <div>barra de carga</div>
+                                <p>Tiempo restante: <samp id="rayado">38 años</samp> algunos minutos</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="panelSubida" style="display: none;">
+                            <img  id="giftWind" src="" alt="">   
+                        <div class="carga">
+                            <p class="negrilla">Guifo creado con éxito</p>
+                            <button class="boton" id="botonCopiarGif" >Copiar Enlace Guifo</button>
+                            <button class="boton" >Descargar Guifo</button>
                         </div>
                     </div>
+                    <div id="panelGrabar">
+                        <button id="finalGrab" class="boton"  style="display: none;">Listo</button>
+                        <button id="CancelarSubida" class="boton"  style="display: none;">Cancelar</button>
+                        <div id="botonesRepertirGrab" style="display: none;">
+                            <button id="repetirGrab" class="boton" >Repetir Captura</button>
+                            <button id="subirGrab" class="boton">Subir Guifo</button>
+                        </div>
+                        <button class="boton" id="botonGrabar"><span class="botonTexto">Grabar</span></button>
+                        <button id="botonPausar" style="display: none;"><span class="botonTexto">Listo</span></button>
+                            <div id="timer" class="subTitulo" style="display: none;">
+                                <p>--:--</p>  
+                             </div> 
+                    </div>         
                 </div>
             </div>    
             <div class="subTitulo">
                 <p>Mis guifos</p> 
             </div>
+            <div id="misGif">
+            </div>
         </div>
+        <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
         <script src="../script/videoRecord.js"></script>
     </main>
 </body>
