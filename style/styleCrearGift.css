@@ -19,7 +19,7 @@ body {
     margin-bottom: 1px;
     box-shadow: 0 1px 0 0 #110038; }
   body .contenedor_p {
-    width: 82.9%;
+    width: 83.33%;
     margin: auto; }
   body header div {
     font-size: 12px; }
@@ -35,6 +35,24 @@ body {
       list-style: none; }
       body header #menu ul li {
         margin-right: 16px; }
+      body header #menu ul #eligirTema #menuTema {
+        margin: auto;
+        display: block;
+        padding: 5px 0px 5px 15px;
+        background: #E6E6E6;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
+        body header #menu ul #eligirTema #menuTema li {
+          padding-bottom: 5px; }
+          body header #menu ul #eligirTema #menuTema li .botonTema {
+            padding: 4px;
+            display: block;
+            width: 90%;
+            margin: auto;
+            background: #F0F0F0;
+            border: 1px solid #808080;
+            box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF; }
+            body header #menu ul #eligirTema #menuTema li .botonTema:hover {
+              background: #FFF4FD; }
       body header #menu ul .boton {
         display: block;
         width: 100%;
@@ -90,16 +108,24 @@ body {
       padding: 3px;
       box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
       body main .panelSugerencias .contenedorSugerencias .sugerencia .menu {
+        display: flex;
+        justify-content: space-between;
         height: auto; }
   body main .panelTendencias #resultados {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px; }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between; }
     body main .panelTendencias #resultados .conteGif {
-      display: flex; }
-      body main .panelTendencias #resultados .conteGif .img {
-        width: 100%;
-        height: 100%; }
+      display: flex;
+      margin: 10px 0px; }
+      body main .panelTendencias #resultados .conteGif img {
+        padding: 2px;
+        width: auto;
+        height: 18rem; }
+        body main .panelTendencias #resultados .conteGif img:hover {
+          background: #E6E6E6;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; }
       body main .panelTendencias #resultados .conteGif .foot {
         display: none;
         height: auto; }
@@ -143,6 +169,9 @@ main .panelCrearGift {
         main .panelCrearGift .mainCrearGif .textMain #botones #botonCancelar {
           margin-right: 16px;
           background: #FFF4FD; }
+          main .panelCrearGift .mainCrearGif .textMain #botones #botonCancelar:hover {
+            background: #F0E5EE;
+            border: 1px dotted #110038; }
   main .panelCrearGift .mainVideo #video {
     width: 100%;
     padding: 2px;
@@ -182,6 +211,11 @@ main .panelCrearGift {
       border: 1px solid #979797;
       box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
       padding: 2px; }
+    main .panelCrearGift .mainVideo .panelSubida .carga .boton {
+      background: #FFF4FD; }
+      main .panelCrearGift .mainVideo .panelSubida .carga .boton:hover {
+        background: #F0E5EE;
+        border: 1px dotted #110038; }
   main .panelCrearGift .mainVideo .marcoVideo {
     width: 95%;
     margin: auto;
@@ -199,6 +233,9 @@ main .panelCrearGift {
       width: auto; }
     main .panelCrearGift .mainVideo #panelGrabar #CancelarSubida {
       background: #FFF4FD; }
+      main .panelCrearGift .mainVideo #panelGrabar #CancelarSubida:hover {
+        background: #F0E5EE;
+        border: 1px dotted #110038; }
     main .panelCrearGift .mainVideo #panelGrabar #botonPausar {
       height: 2.5em;
       background: #FF6161;
@@ -214,6 +251,11 @@ main .panelCrearGift {
       background-position: center;
       border-right: 1px solid #110038;
       background-image: url("../image/assets/recording.svg"); }
+    main .panelCrearGift .mainVideo #panelGrabar #repetirGrab {
+      background: #FFF4FD; }
+      main .panelCrearGift .mainVideo #panelGrabar #repetirGrab:hover {
+        background: #F0E5EE;
+        border: 1px dotted #110038; }
   main .panelCrearGift .mainVideo #botonGrabar {
     background: #F7C9F3;
     border: 1px solid #110038;

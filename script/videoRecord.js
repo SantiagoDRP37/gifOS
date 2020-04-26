@@ -56,6 +56,12 @@ subirGrab.addEventListener('click',()=>{
   mostrarCargaGift();
   subirGift();
 });
+//eventor finalizar captura
+let finalGrab = document.getElementById('finalGrab');
+finalGrab.addEventListener('click',()=>{
+  panelCrearGift.style.cssText = 'display:none;';
+  cargarGiftLocal(GifSubidosUpload);
+});
 //**************************************Funciones*************************************************************//
 //Realizar inicio de video
 function visualizacionVid() { 
@@ -146,7 +152,7 @@ function mostrarCargaGift(){
 //funcion Mostrar subir gift final
 let panelSubida = document.getElementsByClassName('panelSubida')[0];
 let marcoVideo = document.getElementsByClassName('marcoVideo')[0];
-let finalGrab = document.getElementById('finalGrab');
+
 function mostrarGiftfinal(){
   CancelarSubida.style.cssText = 'display:none;';
   marcoVideo.style.cssText = 'display:none;';

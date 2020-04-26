@@ -17,7 +17,12 @@ busqForm.addEventListener('submit',(e)=>{
     buscarGif(q);
 
 });
-let cancelar = document.getElementsByClassName("panelCrearGift");
+//evento de mostrar temas
+let botonTemas = document.getElementById("botonTemas");
+botonTemas.addEventListener('clic',()=>{
+  let menuTema = document.getElementById('menuTema');
+  menuTema.style.cssText('display:none;');
+})
 //**************************************Funciones*************************************************************//
 
 //funcion mostrar resultados de busqueda

@@ -49,6 +49,10 @@ main{
                     #botonCancelar{
                         margin-right: 16px;
                         background:#FFF4FD;
+                            &:hover{
+                                background: #F0E5EE ;
+                                border: 1px dotted #110038;
+                            }
                     }
                 }
             }
@@ -100,6 +104,15 @@ main{
                     box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
                     padding: 2px;  
                 }
+                .carga{
+                    .boton{
+                        background:#FFF4FD;
+                            &:hover{
+                                background: #F0E5EE ;
+                                border: 1px dotted #110038;
+                            }
+                    }
+                }
             }
             .marcoVideo{
                 width: 95%;
@@ -121,9 +134,12 @@ main{
                 }
                 #CancelarSubida{
                     background: #FFF4FD;
+                    &:hover{
+                        background: #F0E5EE ;
+                        border: 1px dotted #110038;
+                    }
                 }
                 #botonPausar{
-                    
                     height: 2.5em;
                     background: #FF6161;
                     border: 1px solid #110038;
@@ -140,7 +156,14 @@ main{
                     border-right: 1px solid #110038;
                     background-image: url("../image/assets/recording.svg");
                 }
+                #repetirGrab{
+                    background:#FFF4FD;
+                            &:hover{
+                                background: #F0E5EE ;
+                                border: 1px dotted #110038;
+                            }
                 
+                }
             }
             #botonGrabar{
                 //position: relative;
