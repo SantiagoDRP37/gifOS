@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Chakra+Petch:400,700&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./style/style.css">
+    <link id="tema" rel="stylesheet" href="./style/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,19 +15,19 @@
         </div>
         <div class="contenedor_p">
             <div id="menu">
-                <img src="./image/assets/gifOF_logo.png" alt="Logo de gif.os">
+                <img id="logoPrincipal" src="./image/assets/gifOF_logo.png" alt="Logo de gif.os">
                 <ul>
                     <li><a class="boton" href="./pages/crearGift.html">Crear Guifos</a></li>
                     <Li id="eligirTema">
                         <div id="botonTemas"> 
                             <button class="boton">Elegir tema <img src="./image/assets/dropdown.svg" alt=""></button> 
                         </div>
-                        <ul id="menuTema">
-                            <li><button class="botonTema">Sailor-Day</button></li>
-                            <li><button class="botonTema">Sailor-Night</button></li>
+                        <ul id="menuTema" style="display: none;">
+                            <li><button id="sailorDay" class="botonTema">Sailor-Day</button></li>
+                            <li><button id="sailorNight" class="botonTema">Sailor-Night</button></li>
                         </ul>
                     </Li>
-                    <li><a id="misGift" href=""><spam>M</spam>is Guifos</a></li>
+                    <li><p id="misGift" href=""><spam>M</spam>is Guifos</p></li>
                 </ul>
             </div>
         </div>

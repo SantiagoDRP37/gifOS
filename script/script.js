@@ -15,14 +15,31 @@ busqForm.addEventListener('submit',(e)=>{
     titulo.textContent = q+" (resultados)";
     sugerencias.innerHTML = resultHtml;
     buscarGif(q);
-
 });
 //evento de mostrar temas
 let botonTemas = document.getElementById("botonTemas");
-botonTemas.addEventListener('clic',()=>{
+botonTemas.addEventListener("click",()=>{
   let menuTema = document.getElementById('menuTema');
-  menuTema.style.cssText('display:none;');
-})
+  menuTema.style.cssText='display:enable;';
+});
+//evento tema day
+let sailorDay = document.getElementById("sailorDay");
+sailorDay.addEventListener('click',()=>{
+  menuTema.style.cssText='display:none;';
+  let tema = document.getElementById('tema');
+  tema.href= './style/style.css'
+  let logoPrincipal = document.getElementById('logoPrincipal');
+  logoPrincipal.src = './image/assets/gifOF_logo.png';;
+});
+//evento tema nigth
+let sailorNight = document.getElementById("sailorNight");
+sailorNight.addEventListener('click',()=>{
+  menuTema.style.cssText='display:none;';
+  let tema = document.getElementById('tema');
+  tema.href= './style/style_night.css'
+  let logoPrincipal = document.getElementById('logoPrincipal');
+  logoPrincipal.src = './image/assets/gifOF_logo_dark.png';
+});
 //**************************************Funciones*************************************************************//
 
 //funcion mostrar resultados de busqueda
