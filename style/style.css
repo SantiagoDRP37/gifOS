@@ -94,15 +94,24 @@ body {
         height: 36px;
         padding: 6px 0px;
         font-size: 16px;
-        line-height: 18px; }
+        line-height: 18px;
+        background: #F7C9F3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; }
+        body main .panelBuscar #buscarForm #botonBuscar:disabled {
+          background: none;
+          border: none; }
   body main #panelsugeBusq {
     padding: 17px 129px 16px 16px; }
-    body main #panelsugeBusq p {
+    body main #panelsugeBusq .sugerenciaBusq {
       width: 92.5%;
       padding: 6px 0px 6px 15px;
       border: 1px solid #808080;
       box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
       margin-bottom: 10px; }
+      body main #panelsugeBusq .sugerenciaBusq:hover {
+        border: 1px dotted #110038;
+        background: #DBDBDB; }
   body main .subTitulo {
     width: 100%;
     background: #FFFAFE;

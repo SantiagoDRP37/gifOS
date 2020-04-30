@@ -3,7 +3,23 @@ const busquedaEndPoint = 'http://api.giphy.com/v1/gifs/search?api_key='
 const tendenciasEndPoint ="http://api.giphy.com/v1/gifs/trending?api_key=";
 
 //************************************** eventos *************************************************************//
-//eventos de boton de sugerencias
+//eventos de sugerencias
+let psug1 = document.getElementById('psug1');
+psug1.addEventListener("click",()=>{
+  buscarGif("kitty");
+  titulo.textContent = "kitty"+" (resultados)";
+});
+let psug2 = document.getElementById('psug2');
+psug2.addEventListener("click",()=>{
+  buscarGif("cat");
+  titulo.textContent = "cat"+" (resultados)";
+});
+let psug3 = document.getElementById('psug3');
+psug3.addEventListener("click",()=>{
+  buscarGif("dogue");
+  titulo.textContent = "dogue"+" (resultados)";
+});
+//eventos de boton de tarjetas sugerencias
 let sug1 = document.getElementById('sug1');
 sug1.addEventListener("click",()=>{
   buscarGif(sug1.value);
@@ -29,9 +45,9 @@ busqForm.addEventListener('submit',(e)=>{
     e.preventDefault();
     const q = busqText.value
     let resultHtml='';
-    titulo.textContent = q+" (resultados)";
+    
     sugerencias.innerHTML = resultHtml;
-    botonBuscar.style.cssText = "background:#E6E6E6;";
+    //botonBuscar.style.cssText = "background:#E6E6E6;";
     if(q==""){
       botonBuscar.disabled=true;
     }else{
@@ -40,13 +56,14 @@ busqForm.addEventListener('submit',(e)=>{
 });
 //evento barra de busqueda, mostrar barra de sugerencias
 let panelsugeBusq = document.getElementById('panelsugeBusq');
-barraBuscar.addEventListener("keyup",()=>{
-  if(busqText.value==undefined){
+barraBuscar.addEventListener("input",()=>{
+  if(busqText.value==""){
     panelsugeBusq.style.cssText = 'display:none;';
+    botonBuscar.disabled=true;
   }else{
     panelsugeBusq.style.cssText = 'display:enable;';
     botonBuscar.disabled=false;
-    botonBuscar.style.cssText = "background:#F7C9F3; border: 1px solid #110038; box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF; "; 
+    
   }
 });
 //evento de mostrar temas
@@ -87,28 +104,31 @@ function mostrarBusqueda(datos){
     let foot = document.createElement('div');
     gif.setAttribute("src", element.images.downsized.url);
     foot.setAttribute("class", "foot");
-    foot.innerHTML+=element.title;
+    foot.innerHTML+=dividirTitulo(element.title);
     conteGif.append(gif);
     conteGif.append(foot);
                 resultados.appendChild(conteGif) ;
   }); 
 }
-//Funcion para mostrar los gif en tendencias
-function mostrarTendencias(datos){
-  const resultados = document.getElementById('resultados'); 
-  let resultHtml='';
-  resultados.innerHTML = resultHtml; //vacia las etiquetas dentro resultados
-  datos.forEach(element => {
-    let conteGif = document.createElement("div");
-            conteGif.setAttribute("class", "conteGif");
-            
-            conteGif.innerHTML +=
-                ' <img src =' + element.images.downsized.url + '>' +
-                ' <div class = "foot">' +
-                '  <p>' + element.title + '</p>' +
-                ' </div>';
-                resultados.appendChild(conteGif) ;
-  }); 
+
+// parsear el titulo para hover
+function dividirTitulo(titulo){
+  let frases = titulo.split(" ");
+  let final = frases.indexOf('GIF');
+  res = "";
+  if (final==0){
+    for (let index = final+1; index < frases.length; index++) {
+       res = res +'#'+frases[index] +" ";
+      
+    }
+  }else{
+    for (let index = 0; index < final; index++) {
+      res = res +'#'+frases[index] +" ";
+      
+    }
+  }
+  
+  return res;
 }
 /*funcion buscar gift de la barra de busqueda
     q = busqueda ingresada en baner
