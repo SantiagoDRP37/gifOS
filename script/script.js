@@ -102,11 +102,11 @@ function mostrarBusqueda(datos){
             conteGif.setAttribute("class", "conteGif");
     let gif = document.createElement('img');
     let foot = document.createElement('div');
-    gif.setAttribute("src", element.images.downsized.url);
-    foot.setAttribute("class", "foot");
-    foot.innerHTML+=dividirTitulo(element.title);
-    conteGif.append(gif);
-    conteGif.append(foot);
+      gif.setAttribute("src", element.images.downsized.url);
+      foot.setAttribute("class", "foot");
+      foot.innerHTML+=dividirTitulo(element.title);
+      conteGif.append(gif);
+      conteGif.append(foot);
                 resultados.appendChild(conteGif) ;
   }); 
 }
@@ -142,7 +142,7 @@ function buscarGif(q){
         .then(data=>{
           
           let datos = data.data;
-          
+          console.log(data);
           mostrarBusqueda(datos);
           
           return data;
@@ -171,30 +171,67 @@ function tendenciasGift(){
         });
   return tend;
 }
+
+let giftArray = [];
+let contador = 0;
 //funcion cargar sugerencia
-function preCargaSugerencia(){
-  let giftencidias = ["https://media0.giphy.com/media/xUOwG5IshvzNMdzR72/giphy.gif?cid=ded2e716ee8e2624c3777aa9e4d5ab001c3a374a02c69e23&rid=giphy.gif","https://media0.giphy.com/media/CW0RoZIy3qiWc/giphy.gif?cid=ded2e7168be921c6a5e1c5be6f195432900f62dd122d4194&rid=giphy.gif","https://media1.giphy.com/media/cNfZ0hJHIiL8RlyV3A/giphy.gif?cid=ded2e71694cade6e49d5075dfa12980c23200d63dd563aa3&rid=giphy.gif","https://media0.giphy.com/media/ZJlesIV8TnabS/giphy.gif?cid=ded2e71614ab7a613c30f633e5d204e7f420f38be2ed701f&rid=giphy.gif "]
+function preCargaSugerencia(gif,busqueda){
   
   
-  for (let i = 0; i < 4; i++) {
-    
     let img = document.createElement("img");
     img.setAttribute("class","gifSug")
-    img.setAttribute("src",giftencidias[i]);
-    let sugerencia = document.getElementsByClassName('sugerencia')[i];
+    //console.log("--"+giftArray[i]);
+    img.setAttribute("src",gif);
+    let sugerencia = document.getElementsByClassName('sugerencia')[contador];
     let boton = sugerencia.getElementsByClassName('botonAzul')[0];
-    sugerencia.insertBefore(img,boton);
+    let menu = sugerencia.getElementsByClassName('menu')[0];
+    let titulo = menu.getElementsByClassName('tituloSug')[0];
+    titulo.textContent = "#"+busqueda;
+  
+    boton.setAttribute('value',busqueda);
+    console.log("hijos es "+sugerencia.childNodes.length)
+    if (sugerencia.childNodes.length == 5){
+      sugerencia.insertBefore(img,boton);
+      contador++;
+    }
     
+    
+  
+}
+//funcion busqueda 1 gif
+ function  buscarSug(busqueda){
+  const busq = fetch(busquedaEndPoint + apiKey + '&q='+busqueda+'&limit='+1)
+        .then((res) => {
+            return res.json();
+        })
+        .then(data=>{
+          let dato = data.data[0].images.downsized.url;
+          //giftArray[index] = datos;
+          //console.log(giftArray[index]);
+          preCargaSugerencia(dato,busqueda);
+          
+          return data;
+        })
+        .catch(error => {
+            return error;
+        });
+  return busq;
+}
+//guardar gif
+function guardarSug(){
+  let giftencidias = ["hola","perro","gato","tren"]
+  for(let i = 0;i<4;i++){
+     buscarSug(giftencidias[i]);
   }
 }
 //funcion carga inicial
 function inicio(){
   botonBuscar.disabled=true;
-  preCargaSugerencia();
   tendenciasGift();
 }
 
-tendenciasGift();
+//tendenciasGift();
 window.onload = () => {
+  guardarSug();
   inicio();
 }
