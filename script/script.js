@@ -64,6 +64,7 @@ barraBuscar.addEventListener("input",()=>{
     panelsugeBusq.style.cssText = 'display:enable;';
     botonBuscar.disabled=false;
     
+    
   }
 });
 //evento de mostrar temas
@@ -193,9 +194,7 @@ function preCargaSugerencia(gif,busqueda){
     if (sugerencia.childNodes.length == 5){
       sugerencia.insertBefore(img,boton);
       contador++;
-    }
-    
-    
+    } 
   
 }
 //funcion busqueda 1 gif
